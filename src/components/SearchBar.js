@@ -1,12 +1,14 @@
+import {useState} from 'react';
 
 const SearchBar = () => {
+
+  const [searchText, setSearchText] = useState("");
+
   return (
     <div className="search-bar">
-      <p>Input your search here:</p>
-      <form>
-        <input type="text">
-          
-        </input>
+      <form className="form-control">
+        <label>Search</label>
+        <input onChange={(e) => setSearchText(e.target.value)} type="text" value={searchText} />
       </form>
       
     </div>
