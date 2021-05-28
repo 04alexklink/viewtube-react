@@ -1,9 +1,9 @@
 import './App.css';
-
+import Header from './components/Header';
 function App() {
   return (
     <div className="container">
-      <h1>ViewTube</h1>
+    <Header title="Viewtube" ></Header>
     </div>
   );
 }
