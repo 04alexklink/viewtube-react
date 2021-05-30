@@ -6,7 +6,8 @@ import {useState} from 'react';
 
 function App() {
 
-  const [videos, setVideos] = useState([])
+  const [videos, setVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState({});
   
   const getVideos = async (searchTerm) => {
     const baseUrl = "https://www.googleapis.com/youtube/v3";
@@ -20,6 +21,7 @@ function App() {
       }
     })
     setVideos(response.data.items);
+    setCurrentVideo(response.data.items[0]);
   }
 
   return (
