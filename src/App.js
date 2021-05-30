@@ -10,7 +10,7 @@ function App() {
   
   const getVideos = async (searchTerm) => {
     const baseUrl = "https://www.googleapis.com/youtube/v3";
-    const videos = await axios.get(baseUrl + "/search", {
+    const response = await axios.get(baseUrl + "/search", {
       params: {
         q: searchTerm,
         part: "snippet",
@@ -19,14 +19,13 @@ function App() {
         key: process.env.REACT_APP_YOUTUBE_API_KEY
       }
     })
-    return videos;
+    setVideos(response.data.items);
   }
 
-  getVideos("cats")
   return (
     <div className="container">
     <Header title="Viewtube" ></Header>
-    <SearchBar></SearchBar>
+    <SearchBar getVideos={getVideos}></SearchBar>
     </div>
   );
 }
