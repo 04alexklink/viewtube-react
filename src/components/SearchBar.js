@@ -1,12 +1,17 @@
 import {useState} from 'react';
 
-const SearchBar = () => {
+const SearchBar = ({getVideos}) => {
 
   const [searchText, setSearchText] = useState("");
 
   const submitSearch = (e) => {
     e.preventDefault();
-    console.log(searchText)
+    if(!searchText) {
+      alert("Please enter a search");
+      return;
+    }
+    getVideos(searchText);
+    setSearchText("");
   }
 
   return (
