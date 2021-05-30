@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
+import CurrentVideo from './components/CurrentVideo';
 import axios from 'axios';
 import {useState} from 'react';
 
@@ -26,8 +27,12 @@ function App() {
 
   return (
     <div className="container">
-    <Header title="Viewtube" ></Header>
-    <SearchBar getVideos={getVideos}></SearchBar>
+      <Header title="Viewtube" ></Header>
+      <SearchBar getVideos={getVideos}></SearchBar>
+      <div className="video-container">
+      <CurrentVideo></CurrentVideo>
+
+      </div>
     </div>
   );
 }
