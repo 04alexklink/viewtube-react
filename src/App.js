@@ -23,6 +23,7 @@ function App() {
     })
     setVideos(response.data.items);
     setCurrentVideo(response.data.items[0]);
+    console.log(videos, currentVideo, "HEY")
   }
 
   return (
@@ -30,8 +31,7 @@ function App() {
       <Header title="Viewtube" ></Header>
       <SearchBar getVideos={getVideos}></SearchBar>
       <div className="video-container">
-      <CurrentVideo></CurrentVideo>
-
+      { videos.length > 0 ? <CurrentVideo></CurrentVideo> : "Please enter a search above"}
       </div>
     </div>
   );

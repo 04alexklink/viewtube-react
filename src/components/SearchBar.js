@@ -17,8 +17,8 @@ const SearchBar = ({getVideos}) => {
   return (
     <div className="search-bar">
       <form className="form-control" onSubmit={submitSearch}>
-        <label>Search</label>
-        <input onChange={(e) => setSearchText(e.target.value)} type="text" value={searchText} />
+        <label htmlFor="search">Search</label>
+        <input id="search" onChange={(e) => setSearchText(e.target.value)} type="text" value={searchText} />
       </form> 
     </div>
   )
