@@ -21,8 +21,8 @@ function App() {
         key: process.env.REACT_APP_YOUTUBE_API_KEY
       }
     })
-    setCurrentVideo(response.data.items[0]);
     setVideos(response.data.items);
+    setCurrentVideo(response.data.items[0]);
   }
 
   return (
@@ -30,7 +30,7 @@ function App() {
       <Header title="Viewtube" ></Header>
       <SearchBar getVideos={getVideos}></SearchBar>
       <div className="video-container">
-      { videos.length > 0 ? <CurrentVideo video={currentVideo}></CurrentVideo> : "Please enter a search above"}
+      { Object.keys(currentVideo).length > 0 ? <CurrentVideo video={currentVideo}></CurrentVideo> : "Please enter a search above"}
       </div>
     </div>
   );
