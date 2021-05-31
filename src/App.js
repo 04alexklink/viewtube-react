@@ -23,6 +23,10 @@ function App() {
     })
     setVideos(response.data.items);
     setCurrentVideo(response.data.items[0]);
+    // what is happening above? is state being updated for both simultaneously?
+    // Had a problem when conditional rendering was based on videos.length for CurrentVideo component.
+    // Seemed to run setVideos and immediately update state and rendered Currentvideo component without currentvideo state being updated
+    // so the component failed to render embedded JSX. Is it best to merge the state into one object or keep them separate as I have done here?
   }
 
   return (
