@@ -1,13 +1,16 @@
 
-const CurrentVideo = () => {
+const CurrentVideo = ({video}) => {
+
+  const videoSrc= `https://www.youtube.com/embed/${video.id.videoId}`
+
   return (
     <div className="current-video">
       <div className="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/0L8cQ9nRtuE" title="YouTube video player" frameBorder="0"></iframe>
+      <iframe src={videoSrc} title="YouTube video player" frameBorder="0"></iframe>
       </div>
       <div className="current-video-info">
-       <h4>Video.....</h4>
-       <p>Hardcoded video info is here........</p>
+       <h4>{video.snippet.title}</h4>
+       <p>{video.snippet.description}</p>
       </div>
     </div>
   )
