@@ -19,7 +19,7 @@ body {
   border: 1px solid grey;
   border-radius: 5px;
   padding: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .form-control {
@@ -34,7 +34,7 @@ body {
 
 .form-control input {
   width: 95%;
-  height: 25px;
+  height: 20px;
   font-size: 17px;
   border-radius: 3px;
 }
@@ -42,7 +42,7 @@ body {
 .current-video {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .video-wrapper {
@@ -76,11 +76,13 @@ body {
 
 .current-video-info h4 {
   font-size: 1rem;
-  margin-bottom: 0.7em;
+  margin-bottom: 0.25em;
+  font-weight: 700;
 }
 
 .current-video-info p {
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* Video Container */
@@ -93,28 +95,40 @@ body {
 .videos-list {
   display: flex;
   flex-direction: column;
+  margin-top: 0.5em;
 }
 
 .video-item-container {
 display: flex;
+margin-bottom: 0.5em;
 }
 
 .video-item-image {
-  margin: 0.8em;
-  max-width: 210px;
+  max-width: 190px;
+  cursor: pointer;
 }
 
 .video-item-title {
-  padding: 0.5em;
+  cursor: pointer;
+  padding-left: 0.5em;
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1250px) {
+
+  .container {
+    margin: auto;
+  }
   .video-container {
     display: flex;
     flex-direction: row;
   }
 
   .current-video {
-    min-width: 600px;
+    min-width: 700px;
+    margin-right: 1.5em;
+  }
+
+  .video-item-container {
+    border-bottom: 1px solid grey;
   }
 }
