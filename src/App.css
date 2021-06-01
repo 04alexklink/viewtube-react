@@ -100,8 +100,16 @@ display: flex;
 
 .video-item-image {
   margin: 0.8em;
+  max-width: 220px;
 }
 
 .video-item-title {
   padding: 1em;
+}
+
+@media (min-width: 900px) {
+  .video-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
