@@ -42,6 +42,7 @@ body {
 .current-video {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 
 .video-wrapper {
@@ -100,16 +101,25 @@ display: flex;
 
 .video-item-image {
   margin: 0.8em;
-  max-width: 220px;
+  max-width: 210px;
 }
 
 .video-item-title {
-  padding: 1em;
+  padding: 0.5em;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1150px) {
   .video-container {
     display: flex;
     flex-direction: row;
   }
+
+  .current-video {
+    min-width: 600px;
+    
+  }
+
+  /* .videos-list {
+    width: 40%;
+  } */
 }
