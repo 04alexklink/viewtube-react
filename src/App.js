@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import CurrentVideo from './components/CurrentVideo';
+import RelatedVideosList from './components/RelatedVideosList';
 import axios from 'axios';
 import {useState} from 'react';
 
@@ -35,6 +36,7 @@ function App() {
       <SearchBar getVideos={getVideos}></SearchBar>
       <div className="video-container">
       { Object.keys(currentVideo).length > 0 ? <CurrentVideo video={currentVideo}></CurrentVideo> : "Please enter a search above"}
+      {videos.length > 0 && <RelatedVideosList videos={videos}></RelatedVideosList>}
       </div>
     </div>
   );
