@@ -30,13 +30,17 @@ function App() {
     // so the component failed to render embedded JSX. Is it best to merge the state into one object or keep them separate as I have done here?
   }
 
+  const updateCurrentVideo = (video) => {
+    setCurrentVideo(video);
+  }
+
   return (
     <div className="container">
       <Header title="Viewtube" ></Header>
       <SearchBar getVideos={getVideos}></SearchBar>
       <div className="video-container">
       { Object.keys(currentVideo).length > 0 ? <CurrentVideo video={currentVideo}></CurrentVideo> : "Please enter a search above"}
-      {videos.length > 0 && <RelatedVideosList videos={videos}></RelatedVideosList>}
+      {videos.length > 0 && <RelatedVideosList updateVideo={updateCurrentVideo} videos={videos}></RelatedVideosList>}
       </div>
     </div>
   );

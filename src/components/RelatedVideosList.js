@@ -1,13 +1,11 @@
 import RelatedVideoItem from "./RelatedVideoItem"
 
-const RelatedVideosList = ({videos}) => {
-
-  
+const RelatedVideosList = ({videos, updateVideo}) => {
 
   return (
     <div className="videos-list">
      {videos.map((video) => (
-      <RelatedVideoItem key={video.id.videoId} video={video}></RelatedVideoItem>
+      <RelatedVideoItem key={video.id.videoId} video={video} updateVideo={updateVideo}></RelatedVideoItem>
      ) 
      )}
     </div>

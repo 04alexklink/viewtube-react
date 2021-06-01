@@ -97,3 +97,11 @@ body {
 .video-item-container {
 display: flex;
 }
+
+.video-item-image {
+  margin: 0.8em;
+}
+
+.video-item-title {
+  padding: 1em;
+}
