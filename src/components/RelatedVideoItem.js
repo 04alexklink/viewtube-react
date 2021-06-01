@@ -1,7 +1,7 @@
 
 const RelatedVideoItem = ({video}) => {
   return (
-    <div className="video-item">
+    <div className="video-item-container">
       <img src={video.snippet.thumbnails.medium.url}></img>
       <div className="video-item-title">
         <h4>{video.snippet.title}</h4>

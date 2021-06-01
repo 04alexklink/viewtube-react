@@ -81,3 +81,19 @@ body {
 .current-video-info p {
   font-size: 0.8rem;
 }
+
+/* Video Container */
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Video List Container */
+.videos-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-item-container {
+display: flex;
+}
