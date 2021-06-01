@@ -22,8 +22,8 @@ function App() {
         key: process.env.REACT_APP_YOUTUBE_API_KEY
       }
     })
-    setVideos(response.data.items);
     setCurrentVideo(response.data.items[0]);
+    setVideos(response.data.items);
     // what is happening above? is state being updated for both simultaneously?
     // Had a problem when conditional rendering was based on videos.length for CurrentVideo component.
     // Seemed to run setVideos and immediately update state and rendered Currentvideo component without currentvideo state being updated
@@ -33,6 +33,7 @@ function App() {
   const updateCurrentVideo = (video) => {
     setCurrentVideo(video);
   }
+  
 
   return (
     <div className="container">
@@ -40,7 +41,7 @@ function App() {
       <SearchBar getVideos={getVideos}></SearchBar>
       <div className="video-container">
       { Object.keys(currentVideo).length > 0 ? <CurrentVideo video={currentVideo}></CurrentVideo> : "Please enter a search above"}
-      {videos.length > 0 && <RelatedVideosList updateVideo={updateCurrentVideo} videos={videos}></RelatedVideosList>}
+      {videos.length > 0 && <RelatedVideosList updateVideo={updateCurrentVideo} videos={videos} currentVideo={currentVideo}></RelatedVideosList>}
       </div>
     </div>
   );

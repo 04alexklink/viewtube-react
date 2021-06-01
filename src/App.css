@@ -116,10 +116,5 @@ display: flex;
 
   .current-video {
     min-width: 600px;
-    
   }
-
-  /* .videos-list {
-    width: 40%;
-  } */
 }
