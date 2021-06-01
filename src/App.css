@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu';
+  font-family: 'Helvetica';
   box-sizing: border-box;
 }
 
@@ -130,5 +130,6 @@ margin-bottom: 0.5em;
 
   .video-item-container {
     border-bottom: 1px solid grey;
+    padding-bottom: 0.5em;
   }
 }
