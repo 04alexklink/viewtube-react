@@ -6,19 +6,16 @@ const SearchBar = ({getVideos}) => {
 
   const submitSearch = (e) => {
     e.preventDefault();
-    if(!searchText) {
-      alert("Please enter a search");
-      return;
-    }
     getVideos(searchText);
     setSearchText("");
   }
-
+  
   return (
     <div className="search-bar">
-      <form className="form-control" onSubmit={submitSearch}>
+      <form className="form-control">
         <label htmlFor="search">Search</label>
         <input id="search" onChange={(e) => setSearchText(e.target.value)} type="text" value={searchText} />
+        <button onClick={submitSearch}>Search</button>
       </form> 
     </div>
   )
