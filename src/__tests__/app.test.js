@@ -9,20 +9,25 @@ import userEvent from '@testing-library/user-event'
 
 afterEach(cleanup)
 
-describe('App loads',() => {
+describe('When Viewtube loads...',() => {
 
-  test('searchbar is displayed on the screen', () => {
+  test('the searchbar is displayed on the screen', () => {
     render(<App />)
-    const input = screen.getByLabelText(/Search/i)
-    expect(input).toBeInTheDocument()
+    const searchBar = screen.getByLabelText(/Search/i)
+    expect(searchBar).toBeInTheDocument()
   });
-  xtest('Car and CarEmissionForms are connected', async () => {
+  test('the video component is not displayed on the screen', () => {
     render(<App />)
-    const input = screen.getByLabelText(/Search/i)
-    userEvent.type(input, 'Hello')
-    expect(input).toHaveValue('Hello')
+    const videoPlayer = screen.queryByTestId('videoiframe')
+    expect(videoPlayer).toBeNull()
+    screen.debug()
+  });
+  xtest('the video component is not displayed on the screen', async () => {
+    render(<App />)
+    userEvent.type(screen.getByRole('textbox'), 'cats')
     userEvent.click(screen.getByRole('button'))
-    expect(await screen.findByText(/Search/)).toBeInTheDocument()
+    const videoPlayer = await screen.findByTestId('videoiframe')
+    expect(videoPlayer).toBeInTheDocument()
     screen.debug()
   });
 

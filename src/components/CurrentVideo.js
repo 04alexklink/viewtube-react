@@ -6,7 +6,7 @@ const CurrentVideo = ({video}) => {
   return (
     <div className="current-video">
       <div className="video-wrapper">
-      <iframe src={videoSrc} title="YouTube video player" frameBorder="0"></iframe>
+      <iframe data-testid="videoiframe" src={videoSrc} title="YouTube video player" frameBorder="0"></iframe>
       </div>
       <div className="current-video-info">
        <h4>{video.snippet.title}</h4>
